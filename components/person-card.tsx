@@ -1,3 +1,5 @@
+"use client";
+
 // components/person-card.tsx
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -9,15 +11,11 @@ export default function PersonCard({ name }: { name: string }) {
   const handleClick = () => {
     const subdomain = name.toLowerCase();
     // Check if we're already on a subdomain
-    const currentHost = window.location.hostname;
-    
-    if (currentHost.includes('herokuapp.com') || currentHost === 'bagliotto.fr') {
-      // Redirect to subdomain
-      window.location.href = `https://${subdomain}.bagliotto.fr`;
-    } else {
-      // Navigate to route if on subdomain
-      window.location.href = `/${subdomain}`;
-    }
+    const currentHost = window.location.origin;
+    const url = new URL(currentHost);
+    url.host = `${subdomain}.${url.host}`;
+    window.location.href = url.toString();
+    console.log(currentHost);
   };
   
   return (
