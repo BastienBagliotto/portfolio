@@ -201,7 +201,14 @@ export default function Bastien() {
       <ProfileHeader
         name="Bastien"
         title="CEO & Fullstack Engineer - Angular Specialist"
-        bio="CEO and Fullstack Engineer with over 6 years of experience in building scalable web and mobile applications. Currently serving as CEO and Product Lead at BizHive, where I coordinate a team of 7 people and drive front-end development initiatives. With extensive expertise in Angular, TypeScript, Node.js, and modern fullstack technologies including Firebase, Ionic, and various databases (NoSQL, PostgreSQL), I specialize in creating robust, maintainable solutions that deliver exceptional user experiences. As a diplomed engineer graduated in 2019, I bring a comprehensive understanding of both technical and business aspects to every project, enabling me to align development efforts with strategic objectives while maintaining high-quality standards."
+        bio="Experienced Front-end Engineer with 5 years of freelance expertise and 7 years of
+        experience with Angular, specializing in building dynamic and responsive web
+        applications across both frontend and backend technologies. As a diplomed engineer,
+        graduated in 2019, I have a strong foundation in a variety of technologies, enabling me
+        to develop robust, scalable solutions while ensuring top-notch user experiences. Adept
+        at collaborating with clients to deliver tailored, high-quality results. Currently seeking
+        freelance opportunities as a Lead Developer, where I can leverage my expertise to
+        drive innovative projects and exceed client expectations."
         avatarSrc="/bastien.jpeg"
       />
 

@@ -5,21 +5,34 @@ export function proxy(request: NextRequest) {
   const url = request.nextUrl.clone();
   const hostname = request.headers.get('host') || '';
   
-  // Handle production domain structure
-  if (hostname === 'www.bagliotto.fr') {
-    // Main website - serve the root page
+  // Define valid person subdomains
+  const validSubdomains = ['bastien', 'romain'];
+  const mainDomain = 'www.bagliotto.fr';
+  
+  // Handle main domain - serve the root page
+  if (hostname === mainDomain) {
     return NextResponse.next();
   }
   
-  // Extract subdomain for person pages
-  const subdomain = hostname.split('.')[0];
+  // Extract subdomain from hostname
+  const hostnameParts = hostname.split('.');
   
-  // Check if it's a person subdomain (e.g., bastien.bagliotto.fr)
-  const validSubdomains = ['bastien', 'romain'];
+  // Handle both www.person.bagliotto.fr and person.bagliotto.fr patterns
+  let personSubdomain = null;
   
-  if (validSubdomains.includes(subdomain)) {
-    // Rewrite to the person's page
-    url.pathname = `/${subdomain}`;
+  if (hostnameParts.length >= 3) {
+    // Handle www.person.bagliotto.fr pattern
+    if (hostnameParts[0] === 'www' && hostnameParts.length === 3) {
+      personSubdomain = hostnameParts[1];
+    }
+  } else if (hostnameParts.length === 2) {
+    // Handle person.bagliotto.fr pattern
+    personSubdomain = hostnameParts[0];
+  }
+  
+  // Check if it's a valid person subdomain
+  if (personSubdomain && validSubdomains.includes(personSubdomain)) {
+    url.pathname = `/${personSubdomain}`;
     return NextResponse.rewrite(url);
   }
   
