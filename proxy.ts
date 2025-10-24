@@ -21,8 +21,8 @@ export function proxy(request: NextRequest) {
   let personSubdomain = null;
   
   if (hostnameParts.length >= 3) {
-    // Handle www.person.bagliotto.fr pattern
-    if (hostnameParts[0] === 'www' && hostnameParts.length === 3) {
+    // Handle www.person.bagliotto.fr pattern (4 parts: www, person, bagliotto, fr)
+    if (hostnameParts[0] === 'www' && hostnameParts.length === 4) {
       personSubdomain = hostnameParts[1];
     }
   } else if (hostnameParts.length === 2) {
