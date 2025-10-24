@@ -15,7 +15,7 @@ export default function PersonCard({ name }: { name: string }) {
     // Handle the case where we're on www.bagliotto.fr
     if (currentHost === 'www.bagliotto.fr') {
       // Create www.person.bagliotto.fr format
-      window.location.href = `http://www.${subdomain}.bagliotto.fr`;
+      window.location.href = `https://www.${subdomain}.bagliotto.fr`;
     } else {
       // For other cases, use the existing logic
       const url = new URL(window.location.origin);
