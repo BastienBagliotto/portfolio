@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Bagliotto Portfolio",
+  title: "Bagliotto Family",
   description: "The Bagliotto family portfolio",
 };
 

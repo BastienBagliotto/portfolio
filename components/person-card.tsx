@@ -33,7 +33,7 @@ export default function PersonCard({ name }: { name: string }) {
             height: { xs: 250, sm: 300, md: 400 },
             objectFit: 'cover'
           }}
-          image={`/${name.toLowerCase()}.png`}
+          image={`/${name.toLowerCase()}.jpeg`}
           title={name}
         />
         <CardContent>
@@ -51,7 +51,10 @@ export default function PersonCard({ name }: { name: string }) {
             variant="body2" 
             sx={{ color: 'text.secondary' }}
           >
-            {name} is an awesome software engineer.
+            {name === 'Bastien' 
+              ? 'Lead Front-end Engineer & Angular Specialist with 7+ years experience'
+              : `${name} is an awesome software engineer.`
+            }
           </Typography>
         </CardContent>
       </CardActionArea>
