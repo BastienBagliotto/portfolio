@@ -5,10 +5,16 @@ export function proxy(request: NextRequest) {
   const url = request.nextUrl.clone();
   const hostname = request.headers.get('host') || '';
   
-  // Extract subdomain
+  // Handle production domain structure
+  if (hostname === 'www.bagliotto.fr') {
+    // Main website - serve the root page
+    return NextResponse.next();
+  }
+  
+  // Extract subdomain for person pages
   const subdomain = hostname.split('.')[0];
   
-  // Check if it's a person subdomain
+  // Check if it's a person subdomain (e.g., bastien.bagliotto.fr)
   const validSubdomains = ['bastien', 'romain'];
   
   if (validSubdomains.includes(subdomain)) {
