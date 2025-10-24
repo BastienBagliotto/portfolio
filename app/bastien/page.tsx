@@ -94,7 +94,8 @@ export default function Bastien() {
         'Managed team workflows, fostering collaboration and efficiency',
         'Delivered high-quality outcomes by balancing technical and design considerations'
       ],
-      website: 'https://bizhive.pro'
+      website: 'https://bizhive.pro',
+      companyFolder: 'bizhive'
     },
     {
       title: 'Freelance Senior Front-end Developer',
@@ -108,7 +109,8 @@ export default function Bastien() {
         'Collaborated within a complex, cross-functional team structure involving product managers, designers, data scientists, and backend engineers',
         'Worked at one of Paris\'s leading tech startups, driving high-quality front-end development and best practices in a fast-paced, innovative environment'
       ],
-      website: 'https://akur8.com'
+      website: 'https://akur8.com',
+      companyFolder: 'akur8'
     },
     {
       title: 'Senior Front-end Developer',
@@ -136,7 +138,8 @@ export default function Bastien() {
         'Integrated Firebase for real-time data synchronization and efficient backend services',
         'Focused on delivering a seamless user experience across all platforms',
         'Collaborated with the team to ensure the app\'s functionality, performance, and reliability'
-      ]
+      ],
+      companyFolder: 'popoll'
     },
     {
       title: 'Angular Developer - Freelance',
@@ -150,7 +153,8 @@ export default function Bastien() {
         'Employed advanced tools such as RxJs, Nx, and Ionic',
         'Gained valuable experience in building scalable, performance-driven solutions for high-impact projects'
       ],
-      website: 'https://truckonline.pro'
+      website: 'https://truckonline.pro',
+      companyFolder: 'truckonline'
     },
     {
       title: 'Fullstack Developer - Freelance',
