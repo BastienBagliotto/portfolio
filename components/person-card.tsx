@@ -9,19 +9,7 @@ import { CardActionArea } from '@mui/material';
 
 export default function PersonCard({ name }: { name: string }) {
   const handleClick = () => {
-    const subdomain = name.toLowerCase();
-    const currentHost = window.location.host;
-    
-    // Handle the case where we're on www.bagliotto.fr
-    if (currentHost === 'www.bagliotto.fr') {
-      // Create www.person.bagliotto.fr format
-      window.location.href = `https://www.${subdomain}.bagliotto.fr`;
-    } else {
-      // For other cases, use the existing logic
-      const url = new URL(window.location.origin);
-      url.host = `${subdomain}.${url.host}`;
-      window.location.href = url.toString();
-    }
+    window.location.href = `https://${name.toLowerCase()}.bagliotto.fr`;
   };
   
   return (
