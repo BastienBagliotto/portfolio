@@ -7,25 +7,17 @@ export function proxy(request: NextRequest) {
   
   // Define valid person subdomains
   const validSubdomains = ['bastien.bagliotto.fr', 'romain.bagliotto.fr'];
-  const mainDomain = 'www.bagliotto.fr';
-  
-  // Handle main domain - serve the root page
-  if (hostname === mainDomain) {
+    
+  if (!validSubdomains.includes(hostname)) {
     return NextResponse.next();
   }
 
-  if (!validSubdomains.includes(hostname)) {
-    window.location.href = `https://www.bagliotto.fr`;
-  }
-  else {
-    url.pathname = `/${hostname.split('.')[0]}`;
-    return NextResponse.rewrite(url);
-  }
-  return NextResponse.next();
+  url.pathname = `/${hostname.split('.')[0]}`;
+  return NextResponse.rewrite(url);
 }
 
 export const config = {
   matcher: [
-    '/((?!api|_next/static|_next/image|favicon.ico).*)',
+    '/((?!api|_next/static|_next/image|favicon.ico|.*\\.(jpeg|jpg|png|webp|gif|svg|ico|woff|woff2|ttf|eot)).*)',
   ],
 };
