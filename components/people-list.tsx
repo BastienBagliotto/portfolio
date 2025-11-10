@@ -15,7 +15,6 @@ export default function PeopleList() {
         }}
       >
         <PersonCard name="Bastien" />
-        <PersonCard name="Romain" />
       </Box>
     </Container>
   )

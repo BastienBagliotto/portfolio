@@ -9,8 +9,6 @@ export function proxy(request: NextRequest) {
   const validSubdomains = [
     'bastien.localhost:3000',
     'bastien.bagliotto.fr',
-    'romain.localhost:3000',
-    'romain.bagliotto.fr'
   ];
     
   if (!validSubdomains.includes(hostname)) {
