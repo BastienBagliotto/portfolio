@@ -265,7 +265,7 @@ export default function SkillsSection() {
                   sx={{ 
                     display: 'grid',
                     gridTemplateColumns: {
-                      xs: 'repeat(2, 1fr)',
+                      xs: 'repeat(1, minmax(0, 1fr))',
                       sm: 'repeat(3, 1fr)',
                       md: 'repeat(4, 1fr)',
                       lg: 'repeat(3, 1fr)',

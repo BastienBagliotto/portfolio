@@ -4,9 +4,14 @@ import { NextRequest, NextResponse } from 'next/server';
 export function proxy(request: NextRequest) {
   const url = request.nextUrl.clone();
   const hostname = request.headers.get('host') || '';
-  
+
   // Define valid person subdomains
-  const validSubdomains = ['bastien.bagliotto.fr', 'romain.bagliotto.fr'];
+  const validSubdomains = [
+    'bastien.localhost:3000',
+    'bastien.bagliotto.fr',
+    'romain.localhost:3000',
+    'romain.bagliotto.fr'
+  ];
     
   if (!validSubdomains.includes(hostname)) {
     return NextResponse.next();

@@ -1,4 +1,4 @@
-import { Box, Typography, Paper, Grid, Card, CardContent } from '@mui/material';
+import { Box, Typography, Paper, Card, CardContent } from '@mui/material';
 import { Business, Phone, Email } from '@mui/icons-material';
 
 interface Reference {
@@ -24,12 +24,22 @@ export default function ReferencesSection({ references }: ReferencesSectionProps
       <Typography variant="body1" sx={{ mb: 3, color: 'text.secondary' }}>
         Connect with these professionals who can provide insights into my work and professional capabilities.
       </Typography>
-      <Grid container spacing={3}>
+      <Box
+        sx={{
+          display: 'grid',
+          gap: 3,
+          gridTemplateColumns: {
+            xs: 'repeat(1, minmax(0, 1fr))',
+            sm: 'repeat(2, minmax(0, 1fr))',
+            lg: 'repeat(4, minmax(0, 1fr))'
+          }
+        }}
+      >
         {references.map((ref, index) => (
-          <Card 
+          <Card
             key={index}
-            sx={{ 
-              flex: 1,
+            sx={{
+              height: '100%',
               transition: 'all 0.3s ease',
               '&:hover': {
                 elevation: 3,
@@ -61,7 +71,7 @@ export default function ReferencesSection({ references }: ReferencesSectionProps
             </CardContent>
           </Card>
         ))}
-      </Grid>
+      </Box>
     </Paper>
   );
 }
