@@ -194,7 +194,7 @@ export default function SkillsSection() {
               background: `linear-gradient(135deg, ${category.color}08, ${category.color}15)`,
               border: `1px solid ${category.color}20`,
               borderRadius: 4,
-              transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+              transition: { xs: 'none', sm: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)' },
               position: 'relative',
               overflow: 'hidden',
                 '&::before': {
@@ -231,7 +231,7 @@ export default function SkillsSection() {
                       width: 64,
                       height: 64,
                       boxShadow: `0 6px 16px ${category.color}40`,
-                      transition: 'all 0.3s ease'
+                      transition: { xs: 'none', sm: 'all 0.3s ease' }
                     }}
                   >
                     {category.icon}
@@ -272,7 +272,7 @@ export default function SkillsSection() {
                       xl: 'repeat(4, 1fr)'
                     },
                     gap: 3,
-                    transition: 'transform 0.3s ease'
+                    transition: { xs: 'none', sm: 'transform 0.3s ease' }
                   }}
                 >
                   {category.skills
@@ -294,26 +294,25 @@ export default function SkillsSection() {
                         borderRadius: 4,
                         background: 'rgba(255, 255, 255, 0.85)',
                         border: `2px solid ${category.color}30`,
-                        transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                        transition: { xs: 'none', sm: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)' },
                         backdropFilter: 'blur(15px)',
                         cursor: 'pointer',
                         minHeight: '140px',
                         boxShadow: `0 4px 12px ${category.color}15`,
-                        '&:hover': {
-                          backgroundColor: `${category.color}15`,
-                          borderColor: category.color,
-                          transform: 'translateY(-4px) scale(1.05)',
-                          boxShadow: `0 12px 24px ${category.color}25`,
-                          '& .skill-logo': {
-                            transform: 'scale(1.2)'
-                          },
-                          '& .skill-name': {
-                            color: category.color,
-                            fontWeight: 700
+                        '@media (hover: hover) and (pointer: fine)': {
+                          '&:hover': {
+                            backgroundColor: `${category.color}15`,
+                            borderColor: category.color,
+                            transform: 'translateY(-4px) scale(1.05)',
+                            boxShadow: `0 12px 24px ${category.color}25`,
+                            '& .skill-logo': {
+                              transform: 'scale(1.2)'
+                            },
+                            '& .skill-name': {
+                              color: category.color,
+                              fontWeight: 700
+                            }
                           }
-                        },
-                        '&:active': {
-                          transform: 'translateY(-2px) scale(1.02)'
                         }
                       }}
                     >
@@ -325,7 +324,7 @@ export default function SkillsSection() {
                           fontSize: { xs: '1rem', sm: '1.1rem', md: '1.2rem' },
                           textAlign: 'center',
                           color: 'text.primary',
-                          transition: 'all 0.3s ease',
+                          transition: { xs: 'none', sm: 'all 0.3s ease' },
                           lineHeight: 1.3,
                           maxWidth: '100%',
                           wordBreak: 'break-word',
