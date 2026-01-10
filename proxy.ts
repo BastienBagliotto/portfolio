@@ -5,6 +5,9 @@ export function proxy(request: NextRequest) {
   const url = request.nextUrl.clone();
   const hostname = request.headers.get('host') || '';
 
+  console.log('hostname', hostname);
+  console.log('url', url);
+
   // Define valid person subdomains
   const validSubdomains = [
     'bastien.localhost:3000',
