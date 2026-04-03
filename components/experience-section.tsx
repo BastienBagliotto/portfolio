@@ -40,6 +40,7 @@ export default function ExperienceSection({ experience }: ExperienceSectionProps
 
   const hasImages = (folder: string) => {
     const imageMap: { [key: string]: string[] } = {
+      'agend-ia': ['/agend-ia/1.png', '/agend-ia/2.png', '/agend-ia/3.png'],
       'bizhive': ['/bizhive/1.png', '/bizhive/2.png', '/bizhive/3.png'],
       'akur8': [],
       'popoll': ['/popoll/1.webp'],

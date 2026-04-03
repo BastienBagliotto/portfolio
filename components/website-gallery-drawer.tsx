@@ -43,6 +43,7 @@ export default function WebsiteGalleryDrawer({
   // Define actual images for each company folder
   const getImagePaths = (folder: string) => {
     const imageMap: { [key: string]: string[] } = {
+      'agend-ia': ['/agend-ia/1.png', '/agend-ia/2.png', '/agend-ia/3.png'],
       'bizhive': ['/bizhive/1.png', '/bizhive/2.png', '/bizhive/3.png'],
       'akur8': [], // No images available
       'popoll': ['/popoll/1.webp'],

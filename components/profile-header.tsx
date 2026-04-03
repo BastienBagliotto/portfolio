@@ -1,4 +1,5 @@
-import { Box, Typography, Avatar, Paper } from '@mui/material';
+import { Box, Typography, Paper, Chip, Link } from '@mui/material';
+import { Email, LinkedIn, GitHub, WhatsApp, Phone } from '@mui/icons-material';
 import Image from 'next/image';
 
 interface ProfileHeaderProps {
@@ -49,10 +50,86 @@ export default function ProfileHeader({ name, title, bio, avatarSrc }: ProfileHe
           <Typography variant="body1" sx={{ 
             fontSize: { xs: '1rem', sm: '1.1rem' },
             lineHeight: 1.6,
-            mt: 2
+            mt: 2,
+            textAlign: 'justify'
           }}>
             {bio}
           </Typography>
+          <Box
+            sx={{
+              display: 'flex',
+              gap: 2,
+              flexWrap: 'wrap',
+              mt: 3,
+              justifyContent: 'center',
+            }}
+          >
+            <Link
+              href="mailto:bastien@bagliotto.fr"
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{ textDecoration: 'none' }}
+            >
+              <Chip
+                icon={<Email />}
+                label="bastien@bagliotto.fr"
+                color="primary"
+                variant="outlined"
+                clickable
+              />
+            </Link>
+            <Link href="tel:+33652794595" sx={{ textDecoration: 'none' }}>
+              <Chip
+                icon={<Phone />}
+                label="06 52 79 45 95"
+                color="primary"
+                variant="outlined"
+                clickable
+              />
+            </Link>
+            <Link
+              href="https://wa.me/33652794595"
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{ textDecoration: 'none' }}
+            >
+              <Chip
+                icon={<WhatsApp />}
+                label="WhatsApp"
+                color="success"
+                variant="outlined"
+                clickable
+              />
+            </Link>
+            <Link
+              href="https://github.com/BastienBagliotto"
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{ textDecoration: 'none' }}
+            >
+              <Chip
+                icon={<GitHub />}
+                label="GitHub"
+                color="default"
+                variant="outlined"
+                clickable
+              />
+            </Link>
+            <Link
+              href="https://www.linkedin.com/in/bastien-bagliotto-ab992114b"
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{ textDecoration: 'none' }}
+            >
+              <Chip
+                icon={<LinkedIn />}
+                label="LinkedIn"
+                color="primary"
+                variant="outlined"
+                clickable
+              />
+            </Link>
+          </Box>
         </Box>
       </Box>
     </Paper>

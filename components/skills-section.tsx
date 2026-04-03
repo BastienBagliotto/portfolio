@@ -3,8 +3,6 @@
 import { 
   Box, 
   Typography, 
-  Paper, 
-  Chip, 
   Link,
   Card,
   CardContent,
@@ -18,9 +16,10 @@ import {
   Storage, 
   Security, 
   CloudQueue,
-  Build,
   BugReport,
-  Architecture
+  Architecture,
+  Api,
+  Extension
 } from '@mui/icons-material';
 
 interface Skill {
@@ -42,22 +41,65 @@ export default function SkillsSection() {
 
   const skillCategories: SkillCategory[] = [
     {
+      title: "Backend & API",
+      icon: <Api />,
+      color: "#2e7d32",
+      skills: [
+        { name: "Node.js", icon: "🟢", website: "https://nodejs.org", level: 4 },
+        { name: "Express 5", icon: "🚀", website: "https://expressjs.com", level: 4 },
+        { name: "REST APIs", icon: "🌐", website: "https://restfulapi.net", level: 4 },
+        { name: "TypeScript (backend)", icon: "🔷", website: "https://www.typescriptlang.org", level: 4 },
+        { name: "tsx", icon: "⚡", website: "https://tsx.is", level: 4 },
+        { name: "Jest", icon: "🃏", website: "https://jestjs.io", level: 4 },
+        { name: "ts-jest", icon: "🧪", website: "https://kulshekhar.github.io/ts-jest/", level: 4 },
+        { name: "PostgreSQL", icon: "🐘", website: "https://www.postgresql.org", level: 4 },
+        { name: "Drizzle ORM", icon: "🛢️", website: "https://orm.drizzle.team", level: 4 },
+        { name: "Drizzle Kit", icon: "📦", website: "https://orm.drizzle.team/docs/kit-overview", level: 4 },
+        { name: "JWT", icon: "🔐", website: "https://jwt.io", level: 4 },
+        { name: "bcrypt", icon: "🔒", website: "https://www.npmjs.com/package/bcrypt", level: 4 },
+        { name: "cookie-parser", icon: "🍪", website: "https://expressjs.com/en/resources/middleware/cookie-parser.html", level: 4 },
+        { name: "CORS & rate limiting", icon: "🛡️", website: "https://expressjs.com/en/resources/middleware/cors.html", level: 4 },
+        { name: "Inversify", icon: "💉", website: "https://inversify.io", level: 4 },
+        { name: "Pino", icon: "🪵", website: "https://getpino.io", level: 4 },
+        { name: "node-cron", icon: "⏰", website: "https://www.npmjs.com/package/node-cron", level: 4 },
+        { name: "Socket.IO (server)", icon: "🔌", website: "https://socket.io", level: 4 },
+      ]
+    },
+    {
+      title: "Integrations & product domain",
+      icon: <Extension />,
+      color: "#00897b",
+      skills: [
+        { name: "OpenAI API", icon: "🤖", website: "https://platform.openai.com/docs", level: 4 },
+        { name: "Google APIs", icon: "🔍", website: "https://github.com/googleapis/google-api-nodejs-client", level: 4 },
+        { name: "Google Calendar", icon: "📅", website: "https://developers.google.com/calendar", level: 4 },
+        { name: "whatsapp-web.js", icon: "💬", website: "https://github.com/pedroslopez/whatsapp-web.js", level: 4 },
+      ]
+    },
+    {
       title: "Frontend Development",
       icon: <Web />,
       color: "#1976d2",
       skills: [
-        { name: "React", icon: "⚛️", website: "https://react.dev", level: 2 },
-        { name: "Next.js", icon: "▲", website: "https://nextjs.org", level: 2 },
+        { name: "React 19", icon: "⚛️", website: "https://react.dev", level: 4 },
+        { name: "Next.js 16", icon: "▲", website: "https://nextjs.org", level: 4 },
         { name: "Angular", icon: "🅰️", website: "https://angular.io", level: 5 },
         { name: "Ionic", icon: "📱", website: "https://ionicframework.com", level: 5 },
         { name: "TypeScript", icon: "🔷", website: "https://www.typescriptlang.org", level: 5 },
         { name: "JavaScript", icon: "🟨", website: "https://developer.mozilla.org/en-US/docs/Web/JavaScript", level: 5 },
         { name: "HTML/CSS", icon: "🌐", website: "https://developer.mozilla.org", level: 5 },
-        { name: "Material-UI (MUI)", icon: "🎨", website: "https://mui.com", level: 3 },
+        { name: "Material-UI (MUI)", icon: "🎨", website: "https://mui.com", level: 4 },
         { name: "Angular Material", icon: "🎨", website: "https://material.angular.io", level: 5 },
-        { name: "Emotion", icon: "💅", website: "https://emotion.sh", level: 2 },
-        { name: "TailwindCSS", icon: "🎯", website: "https://tailwindcss.com", level: 5 },
-        { name: "PostCSS", icon: "🔧", website: "https://postcss.org", level: 5 },
+        { name: "Emotion", icon: "💅", website: "https://emotion.sh", level: 4 },
+        { name: "Radix UI", icon: "◈", website: "https://www.radix-ui.com", level: 4 },
+        { name: "TailwindCSS", icon: "🎯", website: "https://tailwindcss.com", level: 4 },
+        { name: "PostCSS", icon: "🔧", website: "https://postcss.org", level: 4 },
+        { name: "FullCalendar", icon: "📆", website: "https://fullcalendar.io", level: 4 },
+        { name: "Zustand", icon: "🐻", website: "https://github.com/pmndrs/zustand", level: 4 },
+        { name: "React Hook Form", icon: "📝", website: "https://react-hook-form.com", level: 4 },
+        { name: "Zod", icon: "✅", website: "https://zod.dev", level: 4 },
+        { name: "Recharts", icon: "📊", website: "https://recharts.org", level: 4 },
+        { name: "socket.io-client", icon: "⚡", website: "https://socket.io/docs/v4/client-api/", level: 4 },
         { name: "Progressive Web Apps (PWA)", icon: "📱", website: "https://web.dev/progressive-web-apps", level: 3 },
         { name: "State Management (NgRx)", icon: "🔄", website: "https://ngrx.io", level: 4 },
         { name: "NX", icon: "⚡", website: "https://nx.dev", level: 4 },
@@ -69,7 +111,7 @@ export default function SkillsSection() {
       icon: <BugReport />,
       color: "#d32f2f",
       skills: [
-        { name: "Cypress", icon: "🌲", website: "https://www.cypress.io", level: 4 },
+        { name: "Cypress (E2E)", icon: "🌲", website: "https://www.cypress.io", level: 4 },
         { name: "Jasmine", icon: "🧪", website: "https://jasmine.github.io", level: 5 },
         { name: "Karma", icon: "⚡", website: "https://karma-runner.github.io", level: 5 },
         { name: "Cucumber", icon: "🥒", website: "https://cucumber.io", level: 4 },
@@ -77,18 +119,14 @@ export default function SkillsSection() {
       ]
     },
     {
-      title: "Backend Development",
+      title: "Backend Development (JVM & other)",
       icon: <Code />,
       color: "#388e3c",
       skills: [
-        { name: "Node.js", icon: "🟢", website: "https://nodejs.org", level: 4 },
-        { name: "Express.js", icon: "🚀", website: "https://expressjs.com", level: 4 },
         { name: "Spring Boot", icon: "🍃", website: "https://spring.io/projects/spring-boot", level: 3 },
         { name: "Java", icon: "☕", website: "https://www.java.com", level: 4 },
         { name: "Hibernate", icon: "🔄", website: "https://hibernate.org", level: 2 },
-        { name: "RESTful API Development", icon: "🌐", website: "https://restfulapi.net", level: 5 },
-        { name: "GraphQL", icon: "🔷", website: "https://graphql.org", level: 3 },
-        { name: "WebSockets / Real-Time APIs", icon: "⚡", website: "https://developer.mozilla.org/en-US/docs/Web/API/WebSockets", level: 4 }
+        { name: "GraphQL", icon: "🔷", website: "https://graphql.org", level: 3 }
       ]
     },
     {
@@ -107,7 +145,6 @@ export default function SkillsSection() {
       icon: <Security />,
       color: "#f57c00",
       skills: [
-        { name: "JWT", icon: "🔐", website: "https://jwt.io", level: 5 },
         { name: "OAuth2", icon: "🔑", website: "https://oauth.net/2", level: 5 }
       ]
     },
@@ -117,7 +154,6 @@ export default function SkillsSection() {
       color: "#5d4037",
       skills: [
         { name: "MySQL", icon: "🐬", website: "https://www.mysql.com", level: 4 },
-        { name: "PostgreSQL", icon: "🐘", website: "https://www.postgresql.org", level: 4 },
         { name: "MongoDB", icon: "🍃", website: "https://www.mongodb.com", level: 2 },
         { name: "Firebase", icon: "🔥", website: "https://firebase.google.com", level: 3 },
         { name: "NoSQL", icon: "📊", website: "https://www.mongodb.com/nosql-explained", level: 3 },

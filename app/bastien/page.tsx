@@ -4,12 +4,11 @@ import SkillsSection from '../../components/skills-section';
 import ProfileHeader from '../../components/profile-header';
 import ExperienceSection from '../../components/experience-section';
 import EducationSection from '../../components/education-section';
-import ContactSection from '../../components/contact-section';
 import ReferencesSection from '../../components/references-section';
 
 export const metadata: Metadata = {
   title: 'Bastien Resume',
-  description: 'Bastien Bagliotto - CEO & Fullstack Engineer - Angular Specialist',
+  description: 'Bastien Bagliotto - Founder & Fullstack Engineer - Angular Specialist',
 };
 
 export default function Bastien() {
@@ -82,9 +81,22 @@ export default function Bastien() {
 
   const experience = [
     {
-      title: 'CEO - Product & Front-End Lead Developer',
+      title: 'Founder & Fullstack Developer',
+      company: 'Agend-IA',
+      duration: '2025 - Present',
+      description: [
+        'Founded and built Agend-IA, a React and Next.js application with a Node.js backend that helps professionals manage their calendar through AI',
+        'Delivered WhatsApp-based scheduling so users can create, move, and cancel appointments using natural language in familiar messaging threads',
+        'Connected AI orchestration to calendar data and business rules to reduce back-and-forth and keep availability accurate',
+        'Owned the full stack from API design and integrations to responsive UI for use on phone and desktop',
+        'Prioritized secure handling of messages and calendar access for professional use cases'
+      ],
+      companyFolder: 'agend-ia'
+    },
+    {
+      title: 'Founder - Product & Front-End Lead Developer',
       company: 'BizHive',
-      duration: 'March 2024 - Present',
+      duration: 'March 2024 - March 2025',
       description: [
         'Coordinated the Bizhive team, including 7 people',
         'Leading the development of the front-end',
@@ -94,7 +106,6 @@ export default function Bastien() {
         'Managed team workflows, fostering collaboration and efficiency',
         'Delivered high-quality outcomes by balancing technical and design considerations'
       ],
-      website: 'https://bizhive.pro',
       companyFolder: 'bizhive'
     },
     {
@@ -128,7 +139,7 @@ export default function Bastien() {
       website: 'https://ingerop.fr'
     },
     {
-      title: 'CEO - CTO',
+      title: 'Founder',
       company: 'Popoll',
       duration: '2023',
       description: [
@@ -199,8 +210,8 @@ export default function Bastien() {
   return (
     <Container maxWidth="lg" sx={{ py: 4 }}>
       <ProfileHeader
-        name="Bastien"
-        title="CEO & Fullstack Engineer - Angular Specialist"
+        name="Bastien Bagliotto"
+        title="Entrepreneur & Fullstack Engineer - Angular Specialist"
         bio="Experienced Front-end Engineer with 5 years of freelance expertise and 7 years of
         experience with Angular, specializing in building dynamic and responsive web
         applications across both frontend and backend technologies. As a diplomed engineer,
@@ -213,10 +224,6 @@ export default function Bastien() {
       />
 
       <Box sx={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
-        <ContactSection 
-          availabilityText="Currently serving as CEO at BizHive while open to consulting and freelance opportunities as a Lead Developer, where I can leverage my expertise in Angular, TypeScript, and team leadership to drive innovative projects and exceed client expectations."
-        />
-
         <ExperienceSection experience={experience} />
 
         <EducationSection education={education} />
