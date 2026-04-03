@@ -7,8 +7,17 @@ function hostnameWithoutPort(host: string | null): string {
   return host.split(":")[0].toLowerCase();
 }
 
+/** Public hostname the user requested (LBs often put the real host in X-Forwarded-Host). */
+function publicHostname(request: NextRequest): string {
+  const forwarded = request.headers.get("x-forwarded-host");
+  if (forwarded) {
+    return hostnameWithoutPort(forwarded.split(",")[0]?.trim() ?? "");
+  }
+  return hostnameWithoutPort(request.headers.get("host"));
+}
+
 export function proxy(request: NextRequest) {
-  if (!BASTIEN_HOSTNAMES.has(hostnameWithoutPort(request.headers.get("host")))) {
+  if (!BASTIEN_HOSTNAMES.has(publicHostname(request))) {
     return NextResponse.next();
   }
 
